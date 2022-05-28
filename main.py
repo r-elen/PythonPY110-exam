@@ -19,6 +19,18 @@ def random_title(book_name: str) -> str:
     return random.choice(list_books)
 
 
+def faster_random_title(book_name: str) -> str:
+    """
+    Cчитывает только одну случайную строку с названием книги
+
+    :param book_name: Название файла с книгами
+    :return: Название случайной книги из списка
+    """
+    with open(book_name, 'r', encoding='utf8') as f:
+        for line in f:
+            return line
+
+
 def random_book_num() -> str:
     """
     Получение международного стандартного книжного номера. Генерируется случайным образом с помощью модуля Faker
@@ -68,4 +80,5 @@ def main(start_num: int = 1) -> None:
 
 
 if __name__ == '__main__':
+
     main()
